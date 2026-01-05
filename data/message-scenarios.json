@@ -1,0 +1,99 @@
+{
+  "comment": "Scénarios de réponses automatiques pour la messagerie",
+  "info": "Pour chaque conversation, définir un tableau de réponses. Chaque réponse a un 'text' et un 'delay' en millisecondes (1000ms = 1 seconde)",
+  "defaultDelay": 4000,
+  "scenarios": {
+    "1": {
+      "conversationId": 1,
+      "conversationName": "Sophie Martin",
+      "responses": [
+        {
+          "text": "Salut ! Merci pour ton message 😊",
+          "delay": 3000
+        },
+        {
+          "text": "Oui bien sûr ! Je suis contente que tu apprécies mon contenu",
+          "delay": 5000
+        },
+        {
+          "text": "Je vais poster une nouvelle vidéo ce soir vers 20h",
+          "delay": 4000
+        },
+        {
+          "text": "Tu peux activer les notifications pour ne rien rater 💙",
+          "delay": 3000
+        },
+        {
+          "text": "Merci pour ton soutien ! Ça me fait vraiment plaisir 🥰",
+          "delay": 4000
+        },
+        {
+          "text": "N'hésite pas si tu as d'autres questions !",
+          "delay": 2500
+        }
+      ]
+    },
+    "2": {
+      "conversationId": 2,
+      "conversationName": "Lucas Dubois",
+      "responses": [
+        {
+          "text": "Hey ! Content que ça te plaise 😎",
+          "delay": 2500
+        },
+        {
+          "text": "Ouais j'ai prévu pas mal de nouveautés",
+          "delay": 4000
+        },
+        {
+          "text": "Tu verras, ça va être cool !",
+          "delay": 3000
+        },
+        {
+          "text": "Merci pour ton message mec 🙌",
+          "delay": 2000
+        }
+      ]
+    },
+    "3": {
+      "conversationId": 3,
+      "conversationName": "Emma Bernard",
+      "responses": [
+        {
+          "text": "Bonjour ! Oui je fais parfois des demandes spéciales",
+          "delay": 4000
+        },
+        {
+          "text": "Ça dépend de ce que tu cherches exactement",
+          "delay": 5000
+        },
+        {
+          "text": "Tu peux me dire ce qui t'intéresserait ?",
+          "delay": 3500
+        },
+        {
+          "text": "On peut en discuter en privé si tu préfères",
+          "delay": 4000
+        }
+      ]
+    },
+    "4": {
+      "conversationId": 4,
+      "conversationName": "Thomas Petit",
+      "responses": [
+        {
+          "text": "De rien ! C'est toujours un plaisir 😊",
+          "delay": 3000
+        },
+        {
+          "text": "N'hésite pas à revenir quand tu veux",
+          "delay": 3500
+        },
+        {
+          "text": "À bientôt ! 👋",
+          "delay": 2000
+        }
+      ]
+    }
+  }
+}

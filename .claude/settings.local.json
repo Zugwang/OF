@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "WebSearch",
+      "WebFetch(domain:dribbble.com)",
+      "WebFetch(domain:fanspicy.com)",
+      "WebFetch(domain:www.onlinepalette.com)",
+      "Bash(mkdir:*)",
+      "Bash(python start-server.py:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}

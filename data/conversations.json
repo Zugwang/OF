@@ -1,0 +1,128 @@
+{
+  "conversations": [
+    {
+      "id": 1,
+      "name": "Sophie Martin",
+      "avatar": "media/avatars/user1.jpg",
+      "lastMessage": "Merci pour le contenu exclusif !",
+      "timestamp": "Il y a 5 min",
+      "unread": true,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Bonjour ! J'adore votre contenu 😍",
+          "time": "14:32"
+        },
+        {
+          "id": 2,
+          "sender": "sent",
+          "text": "Merci beaucoup ! Content que ça te plaise 💙",
+          "time": "14:35"
+        },
+        {
+          "id": 3,
+          "sender": "received",
+          "text": "Est-ce que vous allez poster bientôt ?",
+          "time": "14:37"
+        },
+        {
+          "id": 4,
+          "sender": "sent",
+          "text": "Oui ! Nouvelle vidéo ce soir à 20h 🎥",
+          "time": "14:40"
+        },
+        {
+          "id": 5,
+          "sender": "received",
+          "text": "Merci pour le contenu exclusif !",
+          "time": "14:42"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Lucas Dubois",
+      "avatar": "media/avatars/user2.jpg",
+      "lastMessage": "Super contenu comme d'hab",
+      "timestamp": "Il y a 1h",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Hey ! Nouvelle vidéo magnifique",
+          "time": "13:15"
+        },
+        {
+          "id": 2,
+          "sender": "sent",
+          "text": "Merci Lucas ! 🙏",
+          "time": "13:20"
+        },
+        {
+          "id": 3,
+          "sender": "received",
+          "text": "Super contenu comme d'hab",
+          "time": "13:22"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Emma Bernard",
+      "avatar": "media/avatars/user3.jpg",
+      "lastMessage": "Vous acceptez les demandes spéciales ?",
+      "timestamp": "Il y a 3h",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Bonjour, je viens de m'abonner",
+          "time": "11:20"
+        },
+        {
+          "id": 2,
+          "sender": "sent",
+          "text": "Bienvenue ! Merci pour le soutien 💕",
+          "time": "11:25"
+        },
+        {
+          "id": 3,
+          "sender": "received",
+          "text": "Vous acceptez les demandes spéciales ?",
+          "time": "11:28"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Thomas Petit",
+      "avatar": "media/avatars/user4.jpg",
+      "lastMessage": "À bientôt !",
+      "timestamp": "Hier",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Merci pour la réponse rapide !",
+          "time": "Hier 18:30"
+        },
+        {
+          "id": 2,
+          "sender": "sent",
+          "text": "Avec plaisir ! N'hésite pas si tu as des questions",
+          "time": "Hier 18:32"
+        },
+        {
+          "id": 3,
+          "sender": "received",
+          "text": "À bientôt !",
+          "time": "Hier 18:35"
+        }
+      ]
+    }
+  ]
+}

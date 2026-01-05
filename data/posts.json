@@ -1,0 +1,144 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "author": "CreatorName",
+      "avatar": "media/avatars/creator.jpg",
+      "timestamp": "Il y a 1 heure",
+      "content": {
+        "text": "Nouvelle vidéo exclusive pour mes abonnés ! 🎥✨",
+        "media": {
+          "type": "video",
+          "url": "media/videos/video1.mp4",
+          "thumbnail": "media/videos/video1-poster.svg"
+        }
+      },
+      "stats": {
+        "likes": 234,
+        "comments": 45,
+        "tips": 12
+      }
+    },
+    {
+      "id": 2,
+      "author": "Sophie Martin",
+      "avatar": "media/avatars/user1.jpg",
+      "timestamp": "Il y a 2 heures",
+      "content": {
+        "text": "Nouvelle collection de moustaches vintage ! 🎩",
+        "media": {
+          "type": "image",
+          "url": "media/images/photo2.jpg"
+        }
+      },
+      "stats": {
+        "likes": 189,
+        "comments": 32,
+        "tips": 8
+      }
+    },
+    {
+      "id": 3,
+      "author": "Lucas Dubois",
+      "avatar": "media/avatars/user2.jpg",
+      "timestamp": "Il y a 4 heures",
+      "content": {
+        "text": "Style du jour : le chevron classique ! Qu'en pensez-vous ? ✨",
+        "media": {
+          "type": "image",
+          "url": "media/images/photo3.jpg"
+        }
+      },
+      "stats": {
+        "likes": 312,
+        "comments": 56,
+        "tips": 15
+      }
+    },
+    {
+      "id": 4,
+      "author": "CreatorName",
+      "avatar": "media/avatars/creator.jpg",
+      "timestamp": "Il y a 6 heures",
+      "content": {
+        "text": "Session photo du jour 📸 Merci pour votre soutien !",
+        "media": {
+          "type": "image",
+          "url": "media/images/photo1.jpg"
+        }
+      },
+      "stats": {
+        "likes": 456,
+        "comments": 78,
+        "tips": 23
+      }
+    },
+    {
+      "id": 5,
+      "author": "Emma Bernard",
+      "avatar": "media/avatars/user3.jpg",
+      "timestamp": "Hier à 18h30",
+      "content": {
+        "text": "Moustache pencil pour un look élégant et discret 💜",
+        "media": null
+      },
+      "stats": {
+        "likes": 145,
+        "comments": 28,
+        "tips": 6
+      }
+    },
+    {
+      "id": 6,
+      "author": "Thomas Petit",
+      "avatar": "media/avatars/user4.svg",
+      "timestamp": "Hier à 14h00",
+      "content": {
+        "text": "Fu Manchu style ! Un classique indémodable 🎯",
+        "media": {
+          "type": "image",
+          "url": "media/images/photo2.jpg"
+        }
+      },
+      "stats": {
+        "likes": 278,
+        "comments": 41,
+        "tips": 11
+      }
+    },
+    {
+      "id": 7,
+      "author": "CreatorName",
+      "avatar": "media/avatars/creator.jpg",
+      "timestamp": "Il y a 2 jours",
+      "content": {
+        "text": "Merci pour vos 800+ abonnés ! Contenu spécial en préparation 💙",
+        "media": null
+      },
+      "stats": {
+        "likes": 892,
+        "comments": 156,
+        "tips": 45
+      }
+    },
+    {
+      "id": 8,
+      "author": "Sophie Martin",
+      "avatar": "media/avatars/user1.jpg",
+      "timestamp": "Il y a 3 jours",
+      "content": {
+        "text": "Behind the scenes de ma dernière session 🎬",
+        "media": {
+          "type": "video",
+          "url": "media/videos/video1.mp4",
+          "thumbnail": "media/videos/video1-poster.svg"
+        }
+      },
+      "stats": {
+        "likes": 567,
+        "comments": 89,
+        "tips": 34
+      }
+    }
+  ]
+}

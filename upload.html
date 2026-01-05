@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlyStache - Upload</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">OnlyStache</a>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="upload.html" class="active">Upload</a></li>
+            <li><a href="messages.html">Messages</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
+            <a href="dashboard.html" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s; font-weight: 500;" onmouseover="this.style.color='var(--of-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Statistiques</a>
+            <a href="profile.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                <span class="username" style="color: var(--text-secondary);">CreatorName</span>
+                <img src="media/avatars/creator.jpg" alt="Profile" class="post-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%2300AFF0\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EC%3C/text%3E%3C/svg%3E'">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container">
+        <h1 style="margin-bottom: var(--spacing-lg);">Publier du contenu</h1>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <!-- Zone d'upload -->
+            <div class="upload-zone" id="uploadZone">
+                <div class="upload-icon">📁</div>
+                <h2 style="margin-bottom: var(--spacing-sm);">Glissez-déposez vos fichiers ici</h2>
+                <p class="upload-text">ou cliquez pour sélectionner</p>
+                <p style="font-size: 14px; color: var(--text-secondary);">
+                    Formats acceptés : JPG, PNG, MP4, MOV (Max 500MB)
+                </p>
+                <input type="file" id="fileInput" accept="image/*,video/*" style="display: none;">
+            </div>
+
+            <!-- Prévisualisation -->
+            <div class="upload-preview" id="uploadPreview">
+                <h3 style="margin: var(--spacing-lg) 0 var(--spacing-md);">Prévisualisation</h3>
+                <div id="previewContent"></div>
+            </div>
+
+            <!-- Formulaire de publication -->
+            <div class="card mt-lg">
+                <h3 class="card-title">Détails de la publication</h3>
+
+                <div style="margin-bottom: var(--spacing-md);">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Description</label>
+                    <textarea
+                        id="postDescription"
+                        placeholder="Ajoutez une description à votre contenu..."
+                        style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-family: var(--font-main); font-size: var(--font-size-md); min-height: 100px; resize: vertical;"
+                    ></textarea>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Prix (optionnel)</label>
+                    <div style="position: relative;">
+                        <input
+                            type="number"
+                            id="postPrice"
+                            placeholder="0.00"
+                            style="width: 100%; padding: var(--spacing-sm); padding-left: 30px; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);"
+                        >
+                        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);">€</span>
+                    </div>
+                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 4px;">
+                        Laissez vide pour un post gratuit pour vos abonnés
+                    </p>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="scheduledPost">
+                        <span>Programmer la publication</span>
+                    </label>
+                    <div id="scheduleOptions" style="display: none; margin-top: var(--spacing-sm); padding: var(--spacing-md); background: var(--bg-secondary); border-radius: var(--radius-md);">
+                        <input
+                            type="datetime-local"
+                            id="scheduleDate"
+                            style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);"
+                        >
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: var(--spacing-sm); justify-content: flex-end;">
+                    <button class="btn btn-secondary" onclick="cancelUpload()">Annuler</button>
+                    <button class="btn btn-primary" onclick="publishPost()">Publier maintenant</button>
+                </div>
+            </div>
+
+            <!-- Statistiques d'upload -->
+            <div class="grid grid-3 mt-lg">
+                <div class="stat-card">
+                    <div class="stat-value">156</div>
+                    <div class="stat-label">Posts publiés</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">89%</div>
+                    <div class="stat-label">Taux d'engagement</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">2.3k</div>
+                    <div class="stat-label">Vues moyennes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const uploadZone = document.getElementById('uploadZone');
+        const fileInput = document.getElementById('fileInput');
+        const uploadPreview = document.getElementById('uploadPreview');
+        const previewContent = document.getElementById('previewContent');
+        const scheduledPost = document.getElementById('scheduledPost');
+        const scheduleOptions = document.getElementById('scheduleOptions');
+
+        // Click sur la zone d'upload
+        uploadZone.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Gestion du drag & drop
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        // Sélection de fichier
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        // Traitement du fichier
+        function handleFile(file) {
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+                const fileURL = e.target.result;
+
+                if (file.type.startsWith('image/')) {
+                    previewContent.innerHTML = `<img src="${fileURL}" alt="Preview" style="max-width: 100%; border-radius: var(--radius-lg);">`;
+                } else if (file.type.startsWith('video/')) {
+                    previewContent.innerHTML = `<video controls src="${fileURL}" style="max-width: 100%; border-radius: var(--radius-lg);"></video>`;
+                }
+
+                uploadPreview.classList.add('active');
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        // Gestion de la programmation
+        scheduledPost.addEventListener('change', (e) => {
+            scheduleOptions.style.display = e.target.checked ? 'block' : 'none';
+        });
+
+        // Publication
+        function publishPost() {
+            const description = document.getElementById('postDescription').value;
+            const price = document.getElementById('postPrice').value;
+            const scheduled = document.getElementById('scheduledPost').checked;
+
+            if (!previewContent.innerHTML) {
+                alert('Veuillez sélectionner un fichier à publier');
+                return;
+            }
+
+            if (!description.trim()) {
+                alert('Veuillez ajouter une description');
+                return;
+            }
+
+            // Simulation de publication
+            alert(`Post publié avec succès !\n\nDescription: ${description}\nPrix: ${price || 'Gratuit'}\nProgrammé: ${scheduled ? 'Oui' : 'Non'}`);
+
+            // Redirection vers l'accueil
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        }
+
+        // Annulation
+        function cancelUpload() {
+            if (confirm('Voulez-vous vraiment annuler ? Les modifications seront perdues.')) {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>

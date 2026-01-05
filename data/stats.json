@@ -1,0 +1,43 @@
+{
+  "username": "CreatorName",
+  "avatar": "media/avatars/creator.jpg",
+  "stats": {
+    "totalViews": 15420,
+    "monthlyEarnings": 3250.50,
+    "subscribers": 847,
+    "likes": 2341,
+    "posts": 156
+  },
+  "monthlyStats": {
+    "viewsGrowth": "+12%",
+    "earningsGrowth": "+8%",
+    "subscribersGrowth": "+15%"
+  },
+  "earningsHistory": {
+    "comment": "Évolution des revenus sur les 6 derniers mois",
+    "months": ["Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+    "earnings": [1850, 2100, 2450, 2800, 3010, 3250.50]
+  },
+  "heatmapData": {
+    "comment": "Données pour la heatmap (intensité par heure 0-23 et jour 0-6)",
+    "data": [
+      [1, 1, 0, 0, 0, 1, 2, 3, 2, 2, 3, 4, 3, 2, 2, 3, 4, 4, 3, 2, 2, 1, 1, 1],
+      [1, 0, 0, 0, 0, 1, 2, 3, 3, 2, 3, 3, 3, 2, 2, 3, 4, 4, 3, 2, 2, 1, 1, 1],
+      [1, 1, 0, 0, 0, 1, 2, 2, 2, 2, 2, 3, 2, 2, 2, 3, 3, 4, 3, 2, 2, 1, 1, 1],
+      [1, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 2, 2, 2, 3, 3, 3, 2, 2, 1, 1, 1],
+      [0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 3, 3, 3, 2, 2, 3, 3, 4, 3, 2, 2, 1, 1, 0],
+      [1, 1, 0, 0, 0, 1, 2, 3, 3, 3, 4, 4, 4, 3, 3, 4, 4, 4, 4, 3, 2, 2, 1, 1],
+      [1, 1, 0, 0, 0, 1, 2, 3, 3, 3, 4, 4, 4, 3, 3, 4, 4, 4, 3, 3, 2, 1, 1, 1]
+    ],
+    "labels": {
+      "days": ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+      "intensity": {
+        "0": "low",
+        "1": "low",
+        "2": "medium",
+        "3": "high",
+        "4": "very-high"
+      }
+    }
+  }
+}

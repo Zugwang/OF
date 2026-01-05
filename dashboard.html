@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlyStache - Statistiques</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">OnlyStache</a>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="messages.html">Messages</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
+            <a href="dashboard.html" class="active" style="color: var(--of-blue); text-decoration: none; font-weight: 500;">Statistiques</a>
+            <a href="profile.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                <span class="username" style="color: var(--text-secondary);">CreatorName</span>
+                <img src="media/avatars/creator.jpg" alt="Profile" class="post-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%2300AFF0\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EC%3C/text%3E%3C/svg%3E'">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container">
+        <!-- En-tête du dashboard -->
+        <div class="dashboard-header">
+            <h1 style="margin-bottom: var(--spacing-sm);">Tableau de bord créateur</h1>
+            <p style="opacity: 0.9;">Bienvenue, <span class="username">CreatorName</span></p>
+        </div>
+
+        <!-- Statistiques principales -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-value" id="totalViews">0</div>
+                <div class="stat-label">Vues totales</div>
+                <div style="font-size: 14px; color: var(--of-blue); margin-top: 8px;" id="viewsGrowth">--</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-value" id="monthlyEarnings">0 €</div>
+                <div class="stat-label">Revenus mensuels</div>
+                <div style="font-size: 14px; color: var(--of-blue); margin-top: 8px;" id="earningsGrowth">--</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-value" id="subscribers">0</div>
+                <div class="stat-label">Abonnés</div>
+                <div style="font-size: 14px; color: var(--of-blue); margin-top: 8px;" id="subscribersGrowth">--</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-value" id="likes">0</div>
+                <div class="stat-label">Likes</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-value" id="posts">0</div>
+                <div class="stat-label">Publications</div>
+            </div>
+        </div>
+
+        <!-- Évolution des revenus -->
+        <div class="heatmap-container" style="margin-bottom: var(--spacing-xl);">
+            <h2 class="heatmap-title">Évolution des revenus</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--spacing-lg); font-size: 14px;">
+                Historique des revenus mensuels sur les 6 derniers mois
+            </p>
+            <div style="position: relative; height: 300px;">
+                <canvas id="earningsChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Heatmap d'activité -->
+        <div class="heatmap-container">
+            <h2 class="heatmap-title">Activité des fans (par jour et heure)</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--spacing-lg); font-size: 14px;">
+                Les zones plus foncées indiquent une activité plus élevée
+            </p>
+            <div id="heatmap"></div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-top: var(--spacing-md); font-size: 14px;">
+                <span style="color: var(--text-secondary);">Faible</span>
+                <div style="display: flex; gap: 4px;">
+                    <div class="heatmap-cell" data-intensity="low" style="width: 20px; height: 20px;"></div>
+                    <div class="heatmap-cell" data-intensity="medium" style="width: 20px; height: 20px;"></div>
+                    <div class="heatmap-cell" data-intensity="high" style="width: 20px; height: 20px;"></div>
+                    <div class="heatmap-cell" data-intensity="very-high" style="width: 20px; height: 20px;"></div>
+                </div>
+                <span style="color: var(--text-secondary);">Élevée</span>
+            </div>
+        </div>
+
+        <!-- Graphiques additionnels -->
+        <div class="grid grid-2 mt-lg">
+            <div class="card">
+                <h3 class="card-title">Revenus par source</h3>
+                <div style="padding: var(--spacing-lg) 0;">
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                            <span>Abonnements</span>
+                            <span style="font-weight: 600;">2,100 €</span>
+                        </div>
+                        <div style="height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 65%; height: 100%; background: var(--of-blue);"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                            <span>Tips</span>
+                            <span style="font-weight: 600;">850 €</span>
+                        </div>
+                        <div style="height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 26%; height: 100%; background: var(--of-blue-dark);"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                            <span>Messages payants</span>
+                            <span style="font-weight: 600;">300 €</span>
+                        </div>
+                        <div style="height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 9%; height: 100%; background: var(--of-gray);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Top Fans</h3>
+                <div style="padding: var(--spacing-sm) 0;">
+                    <div style="display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-sm) 0;">
+                        <div style="width: 24px; font-weight: 600; color: var(--of-blue);">1</div>
+                        <img src="media/avatars/user1.jpg" class="post-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%2300AFF0\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3ES%3C/text%3E%3C/svg%3E'">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600;">Sophie Martin</div>
+                            <div style="font-size: 14px; color: var(--text-secondary);">450 € dépensés</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-sm) 0;">
+                        <div style="width: 24px; font-weight: 600; color: var(--text-secondary);">2</div>
+                        <img src="media/avatars/user2.jpg" class="post-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%2300AFF0\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EL%3C/text%3E%3C/svg%3E'">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600;">Lucas Dubois</div>
+                            <div style="font-size: 14px; color: var(--text-secondary);">380 € dépensés</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-sm) 0;">
+                        <div style="width: 24px; font-weight: 600; color: var(--text-secondary);">3</div>
+                        <img src="media/avatars/user3.jpg" class="post-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%2300AFF0\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EE%3C/text%3E%3C/svg%3E'">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600;">Emma Bernard</div>
+                            <div style="font-size: 14px; color: var(--text-secondary);">320 € dépensés</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/data-loader.js"></script>
+    <script>
+        // Chargement des données au chargement de la page
+        window.addEventListener('DOMContentLoaded', async () => {
+            await loadStats();
+        });
+    </script>
+</body>
+</html>

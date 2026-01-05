@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlyStache - Mon Profil</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">OnlyStache</a>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="messages.html">Messages</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
+            <a href="dashboard.html" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s; font-weight: 500;" onmouseover="this.style.color='var(--of-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Statistiques</a>
+            <a href="profile.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <span class="username" style="color: var(--text-secondary);">CreatorName</span>
+                <img src="media/avatars/creator.jpg" alt="Profile" class="post-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%2300AFF0\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EC%3C/text%3E%3C/svg%3E'">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container">
+        <h1 style="margin-bottom: var(--spacing-lg);">Mon Profil Créateur</h1>
+
+        <!-- Section profil visuel -->
+        <div class="card mb-lg">
+            <h2 class="card-title">Profil Visuel</h2>
+
+            <!-- Bannière -->
+            <div style="margin-bottom: var(--spacing-lg);">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Bannière du profil</label>
+                <div class="profile-banner-preview" id="bannerPreview">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text-secondary);">
+                        Cliquez pour ajouter une bannière
+                    </div>
+                </div>
+                <input type="file" id="bannerInput" accept="image/*" style="display: none;">
+                <button class="btn btn-secondary mt-lg" onclick="document.getElementById('bannerInput').click()">
+                    📷 Changer la bannière
+                </button>
+                <p style="font-size: 14px; color: var(--text-secondary); margin-top: 8px;">
+                    Recommandé : 1500x500px (JPG, PNG)
+                </p>
+            </div>
+
+            <!-- Photo de profil -->
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Photo de profil</label>
+                <div style="display: flex; align-items: center; gap: var(--spacing-lg);">
+                    <img id="avatarPreview" src="media/avatars/creator.jpg"
+                         style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--of-blue);"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\'%3E%3Crect fill=\'%2300AFF0\' width=\'120\' height=\'120\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'48\'%3EC%3C/text%3E%3C/svg%3E'">
+                    <div>
+                        <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                        <button class="btn btn-primary" onclick="document.getElementById('avatarInput').click()">
+                            📷 Changer la photo
+                        </button>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin-top: 8px;">
+                            Recommandé : 500x500px (JPG, PNG)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section informations de base -->
+        <div class="card mb-lg">
+            <h2 class="card-title">Informations du profil</h2>
+
+            <div style="margin-bottom: var(--spacing-md);">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">
+                    Nom d'utilisateur
+                    <span style="color: var(--of-blue); font-size: 12px; font-weight: normal;">(Modifiable une seule fois)</span>
+                </label>
+                <input type="text" id="usernameInput" placeholder="CreatorName"
+                       style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
+                <p style="font-size: 14px; color: var(--text-secondary); margin-top: 4px;">
+                    Votre URL : onlystache.com/<span id="usernamePreview">CreatorName</span>
+                </p>
+            </div>
+
+            <div style="margin-bottom: var(--spacing-md);">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Nom d'affichage</label>
+                <input type="text" id="displayNameInput" placeholder="Votre nom d'affichage"
+                       style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
+            </div>
+
+            <div style="margin-bottom: var(--spacing-lg);">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">
+                    Bio
+                    <span style="color: var(--text-secondary); font-size: 12px; font-weight: normal;">
+                        (<span id="bioCount">0</span>/160 caractères)
+                    </span>
+                </label>
+                <textarea id="bioInput" maxlength="160" placeholder="Décrivez votre contenu et ce que les abonnés recevront..."
+                          style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-family: var(--font-main); font-size: var(--font-size-md); min-height: 80px; resize: vertical;"
+                ></textarea>
+            </div>
+
+            <button class="btn btn-primary" onclick="saveProfileInfo()">
+                💾 Enregistrer les informations
+            </button>
+        </div>
+
+        <!-- Section abonnement -->
+        <div class="grid grid-2 mb-lg">
+            <div class="card">
+                <h2 class="card-title">Prix d'abonnement</h2>
+
+                <div style="margin-bottom: var(--spacing-md);">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin-bottom: var(--spacing-sm);">
+                        <input type="radio" name="accountType" value="free" onchange="toggleSubscriptionPrice()">
+                        <span>Compte gratuit</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="radio" name="accountType" value="paid" checked onchange="toggleSubscriptionPrice()">
+                        <span>Compte payant</span>
+                    </label>
+                </div>
+
+                <div id="pricingSection">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Prix mensuel</label>
+                    <div style="position: relative; margin-bottom: var(--spacing-md);">
+                        <input type="number" id="subscriptionPrice" min="4.99" max="49.99" step="0.01" value="9.99"
+                               style="width: 100%; padding: var(--spacing-sm); padding-left: 30px; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
+                        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);">$</span>
+                    </div>
+                    <p style="font-size: 14px; color: var(--text-secondary);">
+                        Prix recommandé : $5 - $10 par mois
+                    </p>
+                </div>
+
+                <button class="btn btn-primary mt-lg" onclick="saveSubscriptionPrice()">
+                    💾 Enregistrer le prix
+                </button>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Bundles promotionnels</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--spacing-md); font-size: 14px;">
+                    Offrez des réductions pour les abonnements longue durée
+                </p>
+
+                <div style="margin-bottom: var(--spacing-sm);">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="bundle3months">
+                        <span>3 mois - <input type="number" id="discount3" value="10" min="0" max="50" style="width: 60px; padding: 4px; border: 1px solid var(--border-color); border-radius: 4px;">% de réduction</span>
+                    </label>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-sm);">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="bundle6months">
+                        <span>6 mois - <input type="number" id="discount6" value="15" min="0" max="50" style="width: 60px; padding: 4px; border: 1px solid var(--border-color); border-radius: 4px;">% de réduction</span>
+                    </label>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="bundle12months">
+                        <span>12 mois - <input type="number" id="discount12" value="20" min="0" max="50" style="width: 60px; padding: 4px; border: 1px solid var(--border-color); border-radius: 4px;">% de réduction</span>
+                    </label>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveBundles()">
+                    💾 Enregistrer les bundles
+                </button>
+            </div>
+        </div>
+
+        <!-- Section confidentialité -->
+        <div class="card mb-lg">
+            <h2 class="card-title">Paramètres de confidentialité</h2>
+
+            <div style="margin-bottom: var(--spacing-lg);">
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin-bottom: var(--spacing-sm);">
+                    <input type="checkbox" id="showOnlineStatus">
+                    <span>Afficher mon statut en ligne</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin-bottom: var(--spacing-sm);">
+                    <input type="checkbox" id="allowComments" checked>
+                    <span>Autoriser les commentaires sur mes posts</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                    <input type="checkbox" id="watermarkContent" checked>
+                    <span>Ajouter un watermark sur mon contenu</span>
+                </label>
+            </div>
+
+            <div style="margin-bottom: var(--spacing-lg);">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Bloquer les visiteurs par pays</label>
+                <select id="blockedCountries" multiple
+                        style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md); min-height: 100px;">
+                    <option value="FR">France</option>
+                    <option value="US">États-Unis</option>
+                    <option value="GB">Royaume-Uni</option>
+                    <option value="DE">Allemagne</option>
+                    <option value="ES">Espagne</option>
+                    <option value="IT">Italie</option>
+                </select>
+                <p style="font-size: 14px; color: var(--text-secondary); margin-top: 4px;">
+                    Maintenez Ctrl (ou Cmd) pour sélectionner plusieurs pays
+                </p>
+            </div>
+
+            <button class="btn btn-primary" onclick="savePrivacySettings()">
+                💾 Enregistrer les paramètres
+            </button>
+        </div>
+
+        <!-- Section informations bancaires -->
+        <div class="card mb-lg">
+            <h2 class="card-title">Informations de paiement</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--spacing-lg); font-size: 14px;">
+                Pour recevoir vos revenus, configurez vos informations bancaires
+            </p>
+
+            <div class="stat-card" style="text-align: left; margin-bottom: var(--spacing-lg);">
+                <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+                    <span style="color: var(--text-secondary);">Solde disponible</span>
+                    <span style="font-size: var(--font-size-xl); font-weight: bold; color: var(--of-blue);">3,250.50 €</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: var(--text-secondary); font-size: 14px;">Prochain paiement : 1er janvier</span>
+                    <button class="btn btn-secondary">Demander un retrait</button>
+                </div>
+            </div>
+
+            <div style="margin-bottom: var(--spacing-md);">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Méthode de paiement</label>
+                <select id="paymentMethod"
+                        style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
+                    <option value="">Sélectionner une méthode</option>
+                    <option value="bank">Virement bancaire</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="paxum">Paxum</option>
+                </select>
+            </div>
+
+            <div id="bankDetailsSection" style="display: none;">
+                <div style="margin-bottom: var(--spacing-md);">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Nom du titulaire</label>
+                    <input type="text" id="accountHolder" placeholder="Votre nom complet"
+                           style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
+                </div>
+
+                <div style="margin-bottom: var(--spacing-md);">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">IBAN</label>
+                    <input type="text" id="iban" placeholder="FR76 XXXX XXXX XXXX XXXX XXXX XXX"
+                           style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
+                </div>
+
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">BIC/SWIFT</label>
+                    <input type="text" id="bic" placeholder="XXXXXXXX"
+                           style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="savePaymentInfo()">
+                💾 Enregistrer les informations bancaires
+            </button>
+        </div>
+
+        <!-- Actions du compte -->
+        <div class="card">
+            <h2 class="card-title" style="color: var(--text-secondary);">Actions du compte</h2>
+            <div style="display: flex; gap: var(--spacing-sm);">
+                <button class="btn btn-secondary" onclick="if(confirm('Voulez-vous vraiment vous déconnecter ?')) window.location.href='index.html'">
+                    🚪 Déconnexion
+                </button>
+                <button class="btn btn-secondary" style="background-color: #ff4444; color: white;"
+                        onclick="if(confirm('ATTENTION : Cette action est irréversible. Voulez-vous vraiment supprimer votre compte ?')) alert('Compte supprimé (simulation)')">
+                    ⚠️ Supprimer mon compte
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/data-loader.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+        // Charger les données du profil au chargement
+        window.addEventListener('DOMContentLoaded', () => {
+            loadProfileData();
+        });
+
+        // Gestion du changement de méthode de paiement
+        document.getElementById('paymentMethod').addEventListener('change', (e) => {
+            const bankSection = document.getElementById('bankDetailsSection');
+            bankSection.style.display = e.target.value === 'bank' ? 'block' : 'none';
+        });
+
+        // Compteur de caractères pour la bio
+        document.getElementById('bioInput').addEventListener('input', (e) => {
+            document.getElementById('bioCount').textContent = e.target.value.length;
+        });
+
+        // Mise à jour du preview du username
+        document.getElementById('usernameInput').addEventListener('input', (e) => {
+            document.getElementById('usernamePreview').textContent = e.target.value || 'CreatorName';
+        });
+
+        // Gestion de l'upload de bannière
+        document.getElementById('bannerInput').addEventListener('change', handleBannerUpload);
+
+        // Gestion de l'upload d'avatar
+        document.getElementById('avatarInput').addEventListener('change', handleAvatarUpload);
+
+        function handleBannerUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const preview = document.getElementById('bannerPreview');
+                    preview.style.backgroundImage = `url(${event.target.result})`;
+                    preview.style.backgroundSize = 'cover';
+                    preview.style.backgroundPosition = 'center';
+                    preview.innerHTML = '';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function handleAvatarUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    document.getElementById('avatarPreview').src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function toggleSubscriptionPrice() {
+            const accountType = document.querySelector('input[name="accountType"]:checked').value;
+            const pricingSection = document.getElementById('pricingSection');
+            pricingSection.style.display = accountType === 'paid' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
