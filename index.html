@@ -11,46 +11,113 @@
     <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <a href="index.html" class="navbar-logo">OnlyStache</a>
-        <ul class="navbar-menu">
-            <li><a href="upload.html">Upload</a></li>
-            <li><a href="messages.html">Messages</a></li>
-        </ul>
-        <div style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
-            <a href="dashboard.html" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s; font-weight: 500;" onmouseover="this.style.color='var(--of-blue)'" onmouseout="this.style.color='var(--text-secondary)'">Statistiques</a>
-            <a href="profile.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
-                <span class="username" style="color: var(--text-secondary);">Sarah&Antoine</span>
-                <img src="media/avatars/creator.jpg" alt="Profile" class="post-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%2300AFF0\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EC%3C/text%3E%3C/svg%3E'">
-            </a>
-        </div>
-    </nav>
+    <div class="app-layout">
+        <!-- Sidebar verticale gauche -->
+        <aside class="sidebar">
+            <a href="index.html" class="sidebar-logo">OnlyStache</a>
 
-    <!-- Contenu principal -->
-    <div class="container">
-        <div class="feed-container">
-            <h1 style="margin-bottom: var(--spacing-lg);">Mon Feed</h1>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-item active">
+                    <span class="sidebar-item-icon">⌂</span>
+                    <span>Accueil</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <span class="sidebar-item-icon">🔔︎</span>
+                    <span>Notifications</span>
+                </a>
+                <a href="messages.html" class="sidebar-item">
+                    <span class="sidebar-item-icon">✉</span>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <span class="sidebar-item-icon">👤︎</span>
+                    <span>Abonnés</span>
+                </a>
+                <a href="profile.html" class="sidebar-item">
+                    <span class="sidebar-item-icon">◉</span>
+                    <span>Mon Profil</span>
+                </a>
+                <a href="dashboard.html" class="sidebar-item">
+                    <span class="sidebar-item-icon">☰</span>
+                    <span>Statistiques</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <span class="sidebar-item-icon">···</span>
+                    <span>Plus</span>
+                </a>
+            </nav>
 
-            <!-- Zone de création de post -->
-            <div class="card mb-lg">
-                <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
-                    <img src="media/avatars/creator.jpg" alt="Profile" class="post-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%2300AFF0\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EC%3C/text%3E%3C/svg%3E'">
-                    <input type="text" placeholder="Quoi de neuf ?" style="flex: 1; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
-                </div>
-                <div style="display: flex; gap: var(--spacing-sm);">
-                    <button class="btn btn-secondary">📷 Photo</button>
-                    <button class="btn btn-secondary">🎥 Vidéo</button>
-                    <button class="btn btn-primary" style="margin-left: auto;">Publier</button>
-                </div>
-            </div>
+            <button class="sidebar-btn">Nouveau Post</button>
+        </aside>
 
-            <!-- Liste des posts -->
-            <div id="posts-container">
-                <!-- Les posts seront chargés ici via JavaScript -->
-                <div class="text-center" style="padding: var(--spacing-xl); color: var(--text-secondary);">
-                    Chargement des posts...
+        <!-- Contenu principal -->
+        <div class="main-content">
+            <div class="homepage-layout">
+                <!-- Feed central -->
+                <div class="feed-container">
+                    <!-- Zone de création de post -->
+                    <div class="card mb-lg">
+                        <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                            <img src="media/avatars/creator.jpg" alt="Profile" class="post-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%23F08080\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3ES%3C/text%3E%3C/svg%3E'">
+                            <input type="text" placeholder="Quoi de neuf ?" style="flex: 1; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
+                        </div>
+                        <div style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap;">
+                            <button class="btn btn-secondary">▢ Photo</button>
+                            <button class="btn btn-secondary">▶ Vidéo</button>
+                            <button class="btn btn-secondary">✎ Quiz</button>
+                            <button class="btn btn-secondary">▥ Sondage</button>
+                            <button class="btn btn-primary" style="margin-left: auto;">Publier</button>
+                        </div>
+                    </div>
+
+                    <!-- Liste des posts -->
+                    <div id="posts-container">
+                        <!-- Les posts seront chargés ici via JavaScript -->
+                        <div class="text-center" style="padding: var(--spacing-xl); color: var(--text-secondary);">
+                            Chargement des posts...
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Sidebar droite -->
+                <aside class="right-sidebar">
+                    <div class="card" style="margin-bottom: var(--spacing-lg);">
+                        <div style="position: relative;">
+                            <input type="text" placeholder="⌕ Rechercher..." style="width: 100%; padding: var(--spacing-sm) var(--spacing-md); border: 1px solid var(--border-color); border-radius: var(--radius-lg); font-size: var(--font-size-md);">
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin-bottom: var(--spacing-md); font-size: var(--font-size-lg);">Suggestions</h3>
+
+                        <div class="suggestion-item">
+                            <img src="media/avatars/user1.jpg" class="suggestion-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%23F08080\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3ES%3C/text%3E%3C/svg%3E'">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: 14px;">Sophie Martin</div>
+                                <div style="font-size: 12px; color: var(--text-secondary);">@sophiemartinof</div>
+                            </div>
+                            <button class="btn btn-primary" style="padding: 6px 16px; font-size: 14px;">Suivre</button>
+                        </div>
+
+                        <div class="suggestion-item">
+                            <img src="media/avatars/user2.jpg" class="suggestion-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%23F08080\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EL%3C/text%3E%3C/svg%3E'">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: 14px;">Lucas Dubois</div>
+                                <div style="font-size: 12px; color: var(--text-secondary);">@lucasdubois</div>
+                            </div>
+                            <button class="btn btn-primary" style="padding: 6px 16px; font-size: 14px;">Suivre</button>
+                        </div>
+
+                        <div class="suggestion-item">
+                            <img src="media/avatars/user3.jpg" class="suggestion-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%23F08080\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EE%3C/text%3E%3C/svg%3E'">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: 14px;">Emma Bernard</div>
+                                <div style="font-size: 12px; color: var(--text-secondary);">@emmabernard</div>
+                            </div>
+                            <button class="btn btn-primary" style="padding: 6px 16px; font-size: 14px;">Suivre</button>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </div>

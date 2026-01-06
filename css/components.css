@@ -17,18 +17,9 @@ body {
     line-height: 1.5;
 }
 
-/* Navigation */
+/* Navigation (ancienne navbar - cachée) */
 .navbar {
-    background-color: var(--of-white);
-    border-bottom: 1px solid var(--border-color);
-    padding: var(--spacing-md) var(--spacing-xl);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 4px var(--shadow);
+    display: none;
 }
 
 .navbar-logo {
@@ -233,6 +224,93 @@ body {
 
 .grid-4 {
     grid-template-columns: repeat(4, 1fr);
+}
+
+/* Sidebar verticale */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: var(--of-white);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    padding: var(--spacing-lg) 0;
+}
+
+.sidebar-logo {
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    color: var(--of-blue);
+    text-decoration: none;
+    padding: 0 var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    display: block;
+}
+
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.sidebar-item:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.sidebar-item.active {
+    color: var(--of-blue);
+    background-color: rgba(240, 128, 128, 0.1);
+}
+
+.sidebar-item-icon {
+    font-size: 26px;
+    width: 26px;
+    text-align: center;
+    line-height: 1;
+}
+
+.sidebar-btn {
+    margin: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, var(--of-blue) 0%, var(--of-blue-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.sidebar-btn:hover {
+    transform: translateY(-2px);
+}
+
+.main-content {
+    margin-left: 240px;
+    flex: 1;
+    min-width: 0;
 }
 
 /* Utilitaires */

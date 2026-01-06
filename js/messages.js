@@ -69,15 +69,7 @@ function displayConversationsList(conversations) {
                 <div class="conversation-name">${conv.name}</div>
                 <div class="conversation-last">${conv.lastMessage}</div>
             </div>
-            <div style="font-size: 12px; color: var(--text-secondary);">${conv.timestamp}</div>
         `;
-
-        if (conv.unread) {
-            item.style.fontWeight = '600';
-            const badge = document.createElement('div');
-            badge.style.cssText = 'width: 8px; height: 8px; background: var(--of-blue); border-radius: 50%; margin-left: auto;';
-            item.appendChild(badge);
-        }
 
         container.appendChild(item);
     });

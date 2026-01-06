@@ -180,18 +180,25 @@
 
 .messages-layout {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 350px 1fr;
     gap: var(--spacing-lg);
     flex: 1;
     min-height: 0;
     overflow: hidden;
 }
 
-.conversations-list {
+.conversations-wrapper {
     background-color: var(--of-white);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.conversations-list {
+    flex: 1;
     overflow-y: auto;
+    padding: 0 var(--spacing-sm);
 }
 
 .conversation-item {
@@ -275,14 +282,23 @@
 }
 
 /* Page Homepage (Feed) */
-.feed-container {
-    max-width: 800px;
+.homepage-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-.feed-sidebar {
+.feed-container {
+    max-width: 800px;
+}
+
+.right-sidebar {
     position: sticky;
-    top: 80px;
+    top: var(--spacing-xl);
+    align-self: start;
 }
 
 .suggestions-card {
