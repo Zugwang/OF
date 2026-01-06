@@ -128,8 +128,30 @@ function displayMessages(conversation) {
         content.appendChild(bubble);
     });
 
-    // Scroll vers le bas
-    content.scrollTop = content.scrollHeight;
+    // Scroll fluide vers le bas
+    scrollToBottom();
+}
+
+// Fonction pour scroller automatiquement vers le bas de manière fluide
+function scrollToBottom() {
+    const content = document.getElementById('messages-content');
+    if (!content) return;
+
+    // Solution robuste : requestAnimationFrame + scrollIntoView sur le dernier élément
+    requestAnimationFrame(() => {
+        const lastMessage = content.querySelector('.message-bubble:last-child, #typing-indicator-bubble');
+        if (lastMessage) {
+            // Scroller directement sur le dernier message
+            lastMessage.scrollIntoView({
+                behavior: 'smooth',
+                block: 'end',
+                inline: 'nearest'
+            });
+        } else {
+            // Fallback si aucun message
+            content.scrollTop = content.scrollHeight;
+        }
+    });
 }
 
 // Afficher l'indicateur "en train d'écrire"
@@ -160,7 +182,7 @@ function showTypingIndicator(conversationName) {
     }
 
     // Scroll vers le bas pour voir l'indicateur
-    content.scrollTop = content.scrollHeight;
+    scrollToBottom();
 }
 
 // Cacher l'indicateur "en train d'écrire"
@@ -178,7 +200,7 @@ function hideTypingIndicator() {
     }
 }
 
-// Obtenir la prochaine réponse automatique pour une conversation
+// Obtenir le prochain groupe de réponses automatiques pour une conversation
 function getNextAutoReply(conversationId) {
     const scenario = messageScenarios.scenarios[conversationId.toString()];
 
@@ -189,17 +211,17 @@ function getNextAutoReply(conversationId) {
 
     const currentIndex = scenarioIndex[conversationId] || 0;
 
-    // Si on a dépassé le nombre de réponses, recommencer depuis le début
+    // Si on a dépassé le nombre de groupes de réponses, recommencer depuis le début
     if (currentIndex >= scenario.responses.length) {
         console.log('🔄 Fin du scénario atteint, retour au début');
         scenarioIndex[conversationId] = 0;
         return scenario.responses[0];
     }
 
-    const response = scenario.responses[currentIndex];
+    const responseGroup = scenario.responses[currentIndex];
     scenarioIndex[conversationId] = currentIndex + 1;
 
-    return response;
+    return responseGroup;
 }
 
 // Envoi d'un message avec réponse automatique
@@ -235,44 +257,73 @@ function sendMessage() {
     }
 }
 
-// Déclencher une réponse automatique
+// Déclencher une réponse automatique (peut contenir plusieurs messages séquentiels)
 function triggerAutoReply(conversation) {
-    const autoReply = getNextAutoReply(conversation.id);
+    const autoReplyGroup = getNextAutoReply(conversation.id);
 
-    if (!autoReply) {
+    if (!autoReplyGroup || !autoReplyGroup.messages) {
         console.log('⚠️ Pas de réponse automatique disponible');
         return;
     }
 
-    const delay = autoReply.delay || messageScenarios.defaultDelay || 4000;
+    const messages = autoReplyGroup.messages;
+    console.log(`⏱️ Envoi de ${messages.length} message(s) automatique(s)`);
 
-    console.log(`⏱️ Réponse automatique dans ${delay}ms:`, autoReply.text);
-
-    // Afficher l'indicateur "en train d'écrire"
+    // Afficher l'indicateur "en train d'écrire" immédiatement
     showTypingIndicator(conversation.name);
 
-    // Programmer la réponse automatique
-    typingTimeout = setTimeout(() => {
-        // Cacher l'indicateur
-        hideTypingIndicator();
+    // Envoyer les messages séquentiellement avec délais cumulatifs
+    sendMessagesSequentially(conversation, messages, 0, 0);
+}
 
+// Envoyer les messages automatiques séquentiellement
+function sendMessagesSequentially(conversation, messages, index, cumulativeDelay) {
+    if (index >= messages.length) {
+        // Tous les messages ont été envoyés
+        hideTypingIndicator();
+        console.log('✅ Tous les messages automatiques envoyés');
+        return;
+    }
+
+    const message = messages[index];
+    const delay = message.delay || messageScenarios.defaultDelay || 4000;
+    const totalDelay = cumulativeDelay + delay;
+
+    console.log(`⏱️ Message ${index + 1}/${messages.length} dans ${delay}ms (total: ${totalDelay}ms):`, message.text);
+
+    // Programmer l'envoi de ce message
+    setTimeout(() => {
         // Ajouter le message automatique
         const autoMessage = {
             id: conversation.messages.length + 1,
             sender: 'received',
-            text: autoReply.text,
+            text: message.text,
             time: new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
         };
 
         conversation.messages.push(autoMessage);
-        conversation.lastMessage = autoReply.text;
+        conversation.lastMessage = message.text;
         conversation.timestamp = 'À l\'instant';
 
         // Rafraîchir l'affichage
         displayMessages(conversation);
         displayConversationsList(currentConversations);
 
-        console.log('✅ Réponse automatique envoyée');
+        // Si ce n'est PAS le dernier message, réafficher l'indicateur
+        if (index < messages.length - 1) {
+            // Réafficher l'indicateur pour le message suivant
+            showTypingIndicator(conversation.name);
+            // Scroll pour voir l'indicateur
+            scrollToBottom();
+        } else {
+            // Dernier message - on cache l'indicateur après un court délai
+            setTimeout(() => {
+                hideTypingIndicator();
+            }, 300);
+        }
+
+        // Envoyer le message suivant
+        sendMessagesSequentially(conversation, messages, index + 1, totalDelay);
     }, delay);
 }
 

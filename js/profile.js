@@ -9,8 +9,8 @@ async function loadProfileData() {
         const data = await response.json();
 
         // Charger les informations de base
-        document.getElementById('usernameInput').value = data.username || 'CreatorName';
-        document.getElementById('usernamePreview').textContent = data.username || 'CreatorName';
+        document.getElementById('usernameInput').value = data.username || 'Sarah&Antoine';
+        document.getElementById('usernamePreview').textContent = data.username || 'Sarah&Antoine';
 
         // Charger l'avatar
         if (data.avatar) {

@@ -2,15 +2,14 @@
   "posts": [
     {
       "id": 1,
-      "author": "CreatorName",
+      "author": "Sarah&Antoine",
       "avatar": "media/avatars/creator.jpg",
       "timestamp": "Il y a 1 heure",
       "content": {
         "text": "Nouvelle vidéo exclusive pour mes abonnés ! 🎥✨",
         "media": {
           "type": "video",
-          "url": "media/videos/video1.mp4",
-          "thumbnail": "media/videos/video1-poster.svg"
+          "url": "media/videos/7 Ways To Shave & Style A Mustache GQ.mp4"
         }
       },
       "stats": {
@@ -57,7 +56,7 @@
     },
     {
       "id": 4,
-      "author": "CreatorName",
+      "author": "Sarah&Antoine",
       "avatar": "media/avatars/creator.jpg",
       "timestamp": "Il y a 6 heures",
       "content": {
@@ -108,7 +107,7 @@
     },
     {
       "id": 7,
-      "author": "CreatorName",
+      "author": "Sarah&Antoine",
       "avatar": "media/avatars/creator.jpg",
       "timestamp": "Il y a 2 jours",
       "content": {
@@ -130,8 +129,7 @@
         "text": "Behind the scenes de ma dernière session 🎬",
         "media": {
           "type": "video",
-          "url": "media/videos/video1.mp4",
-          "thumbnail": "media/videos/video1-poster.svg"
+          "url": "media/videos/Ludochrono - Moustache.mp4"
         }
       },
       "stats": {

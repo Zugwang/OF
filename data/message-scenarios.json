@@ -1,6 +1,6 @@
 {
   "comment": "Scénarios de réponses automatiques pour la messagerie",
-  "info": "Pour chaque conversation, définir un tableau de réponses. Chaque réponse a un 'text' et un 'delay' en millisecondes (1000ms = 1 seconde)",
+  "info": "Pour chaque conversation, définir un tableau de groupes de réponses. Chaque groupe contient un tableau de messages qui seront envoyés séquentiellement avec des délais cumulatifs.",
   "defaultDelay": 4000,
   "scenarios": {
     "1": {
@@ -8,28 +8,30 @@
       "conversationName": "Sophie Martin",
       "responses": [
         {
-          "text": "Salut ! Merci pour ton message 😊",
-          "delay": 3000
+          "messages": [
+            { "text": "Salut ! Merci pour ton message 😊", "delay": 2000 },
+            { "text": "Comment tu vas ?", "delay": 4500 },
+            { "text": "Ça fait plaisir d'avoir de tes nouvelles !", "delay": 4000 }
+          ]
         },
         {
-          "text": "Oui bien sûr ! Je suis contente que tu apprécies mon contenu",
-          "delay": 5000
+          "messages": [
+            { "text": "Oui bien sûr !", "delay": 2500 },
+            { "text": "Je suis contente que tu apprécies mon contenu 💙", "delay": 2000 }
+          ]
         },
         {
-          "text": "Je vais poster une nouvelle vidéo ce soir vers 20h",
-          "delay": 4000
+          "messages": [
+            { "text": "Je vais poster une nouvelle vidéo ce soir vers 20h", "delay": 3000 },
+            { "text": "Tu peux activer les notifications pour ne rien rater 🔔", "delay": 2000 }
+          ]
         },
         {
-          "text": "Tu peux activer les notifications pour ne rien rater 💙",
-          "delay": 3000
-        },
-        {
-          "text": "Merci pour ton soutien ! Ça me fait vraiment plaisir 🥰",
-          "delay": 4000
-        },
-        {
-          "text": "N'hésite pas si tu as d'autres questions !",
-          "delay": 2500
+          "messages": [
+            { "text": "Merci pour ton soutien ! 🥰", "delay": 2000 },
+            { "text": "Ça me fait vraiment plaisir", "delay": 1500 },
+            { "text": "N'hésite pas si tu as d'autres questions !", "delay": 2000 }
+          ]
         }
       ]
     },
@@ -38,20 +40,22 @@
       "conversationName": "Lucas Dubois",
       "responses": [
         {
-          "text": "Hey ! Content que ça te plaise 😎",
-          "delay": 2500
+          "messages": [
+            { "text": "Hey ! 😎", "delay": 1500 },
+            { "text": "Content que ça te plaise mec", "delay": 2000 }
+          ]
         },
         {
-          "text": "Ouais j'ai prévu pas mal de nouveautés",
-          "delay": 4000
+          "messages": [
+            { "text": "Ouais j'ai prévu pas mal de nouveautés", "delay": 3000 },
+            { "text": "Tu verras, ça va être cool !", "delay": 2000 },
+            { "text": "Stay tuned 🚀", "delay": 1500 }
+          ]
         },
         {
-          "text": "Tu verras, ça va être cool !",
-          "delay": 3000
-        },
-        {
-          "text": "Merci pour ton message mec 🙌",
-          "delay": 2000
+          "messages": [
+            { "text": "Merci pour ton message mec 🙌", "delay": 2000 }
+          ]
         }
       ]
     },
@@ -60,20 +64,21 @@
       "conversationName": "Emma Bernard",
       "responses": [
         {
-          "text": "Bonjour ! Oui je fais parfois des demandes spéciales",
-          "delay": 4000
+          "messages": [
+            { "text": "Bonjour !", "delay": 2000 },
+            { "text": "Oui je fais parfois des demandes spéciales", "delay": 2500 }
+          ]
         },
         {
-          "text": "Ça dépend de ce que tu cherches exactement",
-          "delay": 5000
+          "messages": [
+            { "text": "Ça dépend de ce que tu cherches exactement", "delay": 3000 },
+            { "text": "Tu peux me dire ce qui t'intéresserait ?", "delay": 2000 }
+          ]
         },
         {
-          "text": "Tu peux me dire ce qui t'intéresserait ?",
-          "delay": 3500
-        },
-        {
-          "text": "On peut en discuter en privé si tu préfères",
-          "delay": 4000
+          "messages": [
+            { "text": "On peut en discuter en privé si tu préfères 💜", "delay": 3000 }
+          ]
         }
       ]
     },
@@ -82,16 +87,16 @@
       "conversationName": "Thomas Petit",
       "responses": [
         {
-          "text": "De rien ! C'est toujours un plaisir 😊",
-          "delay": 3000
+          "messages": [
+            { "text": "De rien !", "delay": 1500 },
+            { "text": "C'est toujours un plaisir 😊", "delay": 1500 }
+          ]
         },
         {
-          "text": "N'hésite pas à revenir quand tu veux",
-          "delay": 3500
-        },
-        {
-          "text": "À bientôt ! 👋",
-          "delay": 2000
+          "messages": [
+            { "text": "N'hésite pas à revenir quand tu veux", "delay": 2500 },
+            { "text": "À bientôt ! 👋", "delay": 1500 }
+          ]
         }
       ]
     }

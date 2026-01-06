@@ -167,9 +167,11 @@ function createPostElement(post) {
     let mediaHTML = '';
     if (post.content.media) {
         if (post.content.media.type === 'video') {
+            const posterAttr = post.content.media.thumbnail ? `poster="${post.content.media.thumbnail}"` : '';
             mediaHTML = `
-                <video controls poster="${post.content.media.thumbnail}">
+                <video controls ${posterAttr}>
                     <source src="${post.content.media.url}" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
                 </video>
             `;
         } else if (post.content.media.type === 'image') {
@@ -241,7 +243,7 @@ function drawEarningsChart(earningsHistory) {
     const yScale = (value) => padding.top + height - ((value - yMin) / (yMax - yMin)) * height;
 
     // Couleurs
-    const primaryColor = '#00AFF0';
+    const primaryColor = '#F08080';
     const gridColor = '#E5E7EB';
     const textColor = '#8A96A3';
 
