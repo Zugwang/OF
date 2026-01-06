@@ -64,8 +64,9 @@
                 <div class="card mb-lg">
                     <!-- Bannière -->
                     <div class="profile-banner-preview" style="margin-bottom: -60px;">
-                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(to bottom, #FF6B9D 0%, #FFA94D 30%, #FFD97D 60%, #FFE5B4 100%);">
-                        </div>
+                        <img src="media/banner/glorieux-ciel-au-coucher-du-soleil-en-toile-de-fond-d-une-plage-tranquille.jpg"
+                             alt="Bannière"
+                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
 
                     <!-- Photo de profil et informations -->
@@ -86,6 +87,34 @@
                                 Salut ! Nous sommes Sarah & Antoine, votre couple de rêve devenu réalité. Nous sommes un duo au côté sauvage, prêts à partager notre univers avec vous 💋
                             </p>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Statistiques principales -->
+                <div class="dashboard-stats" style="margin-bottom: var(--spacing-lg);">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalViews">0</div>
+                        <div class="stat-label">Vues totales</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-value" id="monthlyEarnings">0 €</div>
+                        <div class="stat-label">Revenus mensuels</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-value" id="subscribers">0</div>
+                        <div class="stat-label">Abonnés</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-value" id="likes">0</div>
+                        <div class="stat-label">Likes</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-value" id="posts">0</div>
+                        <div class="stat-label">Publications</div>
                     </div>
                 </div>
 
@@ -159,10 +188,12 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="js/data-loader.js"></script>
     <script src="js/profile.js"></script>
     <script>
         // Chargement des données au chargement de la page
-        window.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('DOMContentLoaded', async () => {
+            await loadStats();
             loadProfileData();
         });
 
