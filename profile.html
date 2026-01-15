@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnlyStache - Sarah&Antoine</title>
+    <title>GFExperience - Sarah&Antoine</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/variables.css">
@@ -14,7 +14,7 @@
     <div class="app-layout">
         <!-- Sidebar verticale gauche -->
         <aside class="sidebar">
-            <a href="index.html" class="sidebar-logo">OnlyStache</a>
+            <a href="index.html" class="sidebar-logo">GFExperience</a>
 
             <nav class="sidebar-nav">
                 <a href="index.html" class="sidebar-item">
@@ -24,6 +24,7 @@
                 <a href="#" class="sidebar-item">
                     <span class="sidebar-item-icon">🔔︎</span>
                     <span>Notifications</span>
+                    <span class="notification-badge">9+</span>
                 </a>
                 <a href="messages.html" class="sidebar-item">
                     <span class="sidebar-item-icon">✉</span>
@@ -94,7 +95,7 @@
                     </div>
 
                     <div class="stat-card">
-                        <div class="stat-value" id="monthlyEarnings">0 €</div>
+                        <div class="stat-value" id="monthlyEarnings">$0</div>
                         <div class="stat-label">Revenus mensuels</div>
                     </div>
 
@@ -133,12 +134,12 @@
                         <div id="pricingSection">
                             <label style="display: block; margin-bottom: 8px; font-weight: 500;">Prix mensuel</label>
                             <div style="position: relative; margin-bottom: var(--spacing-md);">
-                                <input type="number" id="subscriptionPrice" min="4.99" max="49.99" step="0.01" value="9.99"
+                                <input type="number" id="subscriptionPrice" min="4.99" max="49.99" step="0.01" value="7.00"
                                        style="width: 100%; padding: var(--spacing-sm); padding-left: 30px; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-md);">
-                                <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);">€</span>
+                                <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);">$</span>
                             </div>
                             <p style="font-size: 14px; color: var(--text-secondary);">
-                                Prix recommandé : 5€ - 10€ par mois
+                                Prix recommandé : $5 - $20 par mois
                             </p>
                         </div>
 
@@ -214,10 +215,10 @@
             if (accountType === 'paid') {
                 const priceNum = parseFloat(price);
                 if (priceNum < 4.99 || priceNum > 49.99) {
-                    alert('Le prix doit être entre 4.99€ et 49.99€');
+                    alert('Le prix doit être entre $4.99 et $49.99');
                     return;
                 }
-                alert(`Prix d'abonnement sauvegardé : ${priceNum}€/mois`);
+                alert(`Prix d'abonnement sauvegardé : $${priceNum}/mois`);
             } else {
                 alert('Compte configuré en mode gratuit');
             }

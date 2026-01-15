@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnlyStache - Accueil</title>
+    <title>GFExperience - Accueil</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/variables.css">
@@ -14,7 +14,7 @@
     <div class="app-layout">
         <!-- Sidebar verticale gauche -->
         <aside class="sidebar">
-            <a href="index.html" class="sidebar-logo">OnlyStache</a>
+            <a href="index.html" class="sidebar-logo">GFExperience</a>
 
             <nav class="sidebar-nav">
                 <a href="index.html" class="sidebar-item active">
@@ -24,6 +24,7 @@
                 <a href="#" class="sidebar-item">
                     <span class="sidebar-item-icon">🔔︎</span>
                     <span>Notifications</span>
+                    <span class="notification-badge">9+</span>
                 </a>
                 <a href="messages.html" class="sidebar-item">
                     <span class="sidebar-item-icon">✉</span>
@@ -72,10 +73,122 @@
 
                     <!-- Liste des posts -->
                     <div id="posts-container">
-                        <!-- Les posts seront chargés ici via JavaScript -->
-                        <div class="text-center" style="padding: var(--spacing-xl); color: var(--text-secondary);">
-                            Chargement des posts...
-                        </div>
+                        <!-- Vidéos -->
+                        <article class="post-card">
+                            <div class="post-header">
+                                <img src="media/avatars/creator.jpg" alt="Sarah&Antoine" class="post-avatar">
+                                <div>
+                                    <div class="post-author">Sarah&Antoine</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Il y a 2h</div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <video controls style="width: 100%;">
+                                    <source src="media/videos_home/video1.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="post-actions">
+                                <div class="post-action">
+                                    <span>❤️</span>
+                                    <span>124</span>
+                                </div>
+                                <div class="post-action">
+                                    <span>💬</span>
+                                    <span>23</span>
+                                </div>
+                                <div class="post-action">
+                                    <span>💰</span>
+                                    <span>45</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-header">
+                                <img src="media/avatars/creator.jpg" alt="Sarah&Antoine" class="post-avatar">
+                                <div>
+                                    <div class="post-author">Sarah&Antoine</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Il y a 5h</div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <video controls style="width: 100%;">
+                                    <source src="media/videos_home/video2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="post-actions">
+                                <div class="post-action">
+                                    <span>❤️</span>
+                                    <span>89</span>
+                                </div>
+                                <div class="post-action">
+                                    <span>💬</span>
+                                    <span>12</span>
+                                </div>
+                                <div class="post-action">
+                                    <span>💰</span>
+                                    <span>34</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-header">
+                                <img src="media/avatars/creator.jpg" alt="Sarah&Antoine" class="post-avatar">
+                                <div>
+                                    <div class="post-author">Sarah&Antoine</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Hier</div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <video controls style="width: 100%;">
+                                    <source src="media/videos_home/video3.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="post-actions">
+                                <div class="post-action">
+                                    <span>❤️</span>
+                                    <span>156</span>
+                                </div>
+                                <div class="post-action">
+                                    <span>💬</span>
+                                    <span>28</span>
+                                </div>
+                                <div class="post-action">
+                                    <span>💰</span>
+                                    <span>67</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-header">
+                                <img src="media/avatars/creator.jpg" alt="Sarah&Antoine" class="post-avatar">
+                                <div>
+                                    <div class="post-author">Sarah&Antoine</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Il y a 2 jours</div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <video controls style="width: 100%;">
+                                    <source src="media/videos_home/video4.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="post-actions">
+                                <div class="post-action">
+                                    <span>❤️</span>
+                                    <span>203</span>
+                                </div>
+                                <div class="post-action">
+                                    <span>💬</span>
+                                    <span>41</span>
+                                </div>
+                                <div class="post-action">
+                                    <span>💰</span>
+                                    <span>88</span>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
@@ -91,28 +204,28 @@
                         <h3 style="margin-bottom: var(--spacing-md); font-size: var(--font-size-lg);">Suggestions</h3>
 
                         <div class="suggestion-item">
-                            <img src="media/avatars/user1.jpg" class="suggestion-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%23F08080\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3ES%3C/text%3E%3C/svg%3E'">
+                            <img src="media/suggestions/suggestions1.jpg" class="suggestion-avatar">
                             <div style="flex: 1;">
-                                <div style="font-weight: 600; font-size: 14px;">Sophie Martin</div>
-                                <div style="font-size: 12px; color: var(--text-secondary);">@sophiemartinof</div>
+                                <div style="font-weight: 600; font-size: 14px;">Luna Morreti</div>
+                                <div style="font-size: 12px; color: var(--text-secondary);">@lunamorreti</div>
                             </div>
                             <button class="btn btn-primary" style="padding: 6px 16px; font-size: 14px;">Suivre</button>
                         </div>
 
                         <div class="suggestion-item">
-                            <img src="media/avatars/user2.jpg" class="suggestion-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%23F08080\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EL%3C/text%3E%3C/svg%3E'">
+                            <img src="media/suggestions/suggestions2.jpg" class="suggestion-avatar">
                             <div style="flex: 1;">
-                                <div style="font-weight: 600; font-size: 14px;">Lucas Dubois</div>
-                                <div style="font-size: 12px; color: var(--text-secondary);">@lucasdubois</div>
+                                <div style="font-weight: 600; font-size: 14px;">Sasha Velvet</div>
+                                <div style="font-size: 12px; color: var(--text-secondary);">@sashavelvet</div>
                             </div>
                             <button class="btn btn-primary" style="padding: 6px 16px; font-size: 14px;">Suivre</button>
                         </div>
 
                         <div class="suggestion-item">
-                            <img src="media/avatars/user3.jpg" class="suggestion-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%23F08080\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3EE%3C/text%3E%3C/svg%3E'">
+                            <img src="media/suggestions/suggestions3.jpg" class="suggestion-avatar">
                             <div style="flex: 1;">
-                                <div style="font-weight: 600; font-size: 14px;">Emma Bernard</div>
-                                <div style="font-size: 12px; color: var(--text-secondary);">@emmabernard</div>
+                                <div style="font-weight: 600; font-size: 14px;">Alyssa Rayne</div>
+                                <div style="font-size: 12px; color: var(--text-secondary);">@alyssarayne</div>
                             </div>
                             <button class="btn btn-primary" style="padding: 6px 16px; font-size: 14px;">Suivre</button>
                         </div>

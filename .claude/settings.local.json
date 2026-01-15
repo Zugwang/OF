@@ -8,7 +8,8 @@
       "WebFetch(domain:www.onlinepalette.com)",
       "Bash(mkdir:*)",
       "Bash(python start-server.py:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git add:*)"
     ]
   }
 }

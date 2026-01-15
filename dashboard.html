@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnlyStache - Statistiques</title>
+    <title>GFExperience - Statistiques</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/variables.css">
@@ -15,7 +15,7 @@
     <div class="app-layout">
         <!-- Sidebar verticale gauche -->
         <aside class="sidebar">
-            <a href="index.html" class="sidebar-logo">OnlyStache</a>
+            <a href="index.html" class="sidebar-logo">GFExperience</a>
 
             <nav class="sidebar-nav">
                 <a href="index.html" class="sidebar-item">
@@ -25,6 +25,7 @@
                 <a href="#" class="sidebar-item">
                     <span class="sidebar-item-icon">🔔︎</span>
                     <span>Notifications</span>
+                    <span class="notification-badge">9+</span>
                 </a>
                 <a href="messages.html" class="sidebar-item">
                     <span class="sidebar-item-icon">✉</span>
@@ -63,42 +64,41 @@
         <!-- Statistiques principales -->
         <div class="dashboard-stats">
             <div class="stat-card">
-                <div class="stat-value" id="totalViews">0</div>
+                <div class="stat-value">13 392 092</div>
                 <div class="stat-label">Vues totales</div>
-                <div style="font-size: 14px; color: var(--of-blue); margin-top: 8px;" id="viewsGrowth">--</div>
+                <div style="font-size: 14px; color: var(--of-blue); margin-top: 8px;">+12%</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-value" id="monthlyEarnings">0 €</div>
+                <div class="stat-value">$2 826.07</div>
                 <div class="stat-label">Revenus mensuels</div>
-                <div style="font-size: 14px; color: var(--of-blue); margin-top: 8px;" id="earningsGrowth">--</div>
+                <div style="font-size: 14px; color: var(--of-blue); margin-top: 8px;">-10%</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-value" id="subscribers">0</div>
+                <div class="stat-value">694</div>
                 <div class="stat-label">Abonnés</div>
-                <div style="font-size: 14px; color: var(--of-blue); margin-top: 8px;" id="subscribersGrowth">--</div>
+                <div style="font-size: 14px; color: var(--of-blue); margin-top: 8px;">+15%</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-value" id="likes">0</div>
+                <div class="stat-value">19 388</div>
                 <div class="stat-label">Likes</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-value" id="posts">0</div>
+                <div class="stat-value">232</div>
                 <div class="stat-label">Publications</div>
             </div>
         </div>
 
         <!-- Évolution des revenus -->
         <div class="heatmap-container" style="margin-bottom: var(--spacing-xl);">
-            <h2 class="heatmap-title">Évolution des revenus</h2>
             <p style="color: var(--text-secondary); margin-bottom: var(--spacing-lg); font-size: 14px;">
-                Historique des revenus mensuels sur les 6 derniers mois
+                Historique des revenus sur l'année passée
             </p>
-            <div style="position: relative; height: 300px;">
-                <canvas id="earningsChart"></canvas>
+            <div style="text-align: center;">
+                <img src="media/stats/of_stats.png" alt="Évolution des revenus" style="max-width: 70%; height: auto;">
             </div>
         </div>
 
@@ -107,25 +107,40 @@
             <h2 class="heatmap-title">Dernières vidéos uploadées</h2>
             <div style="overflow-x: auto; padding: var(--spacing-md) 0;">
                 <div style="display: flex; gap: var(--spacing-md); min-width: min-content;">
-                    <div class="video-item">
-                        <video controls preload="metadata" style="width: 300px; height: 200px; border-radius: var(--radius-md); object-fit: cover; background: #000;">
-                            <source src="media/videos/video1.mp4" type="video/mp4">
-                        </video>
+                    <div class="video-item" style="text-align: center;">
+                        <img src="media/videos_stats/video1.png" alt="Vidéo 1" style="width: 300px; height: 200px; border-radius: var(--radius-md); object-fit: cover; display: block;">
+                        <div style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                            <div>👁️ 10 vues</div>
+                            <div style="color: var(--of-blue); font-weight: 600; margin-top: 4px;">$10</div>
+                        </div>
                     </div>
-                    <div class="video-item">
-                        <video controls preload="metadata" style="width: 300px; height: 200px; border-radius: var(--radius-md); object-fit: cover; background: #000;">
-                            <source src="media/videos/video2.mp4" type="video/mp4">
-                        </video>
+                    <div class="video-item" style="text-align: center;">
+                        <img src="media/videos_stats/video2.png" alt="Vidéo 2" style="width: 300px; height: 200px; border-radius: var(--radius-md); object-fit: cover; display: block;">
+                        <div style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                            <div>👁️ 20 vues</div>
+                            <div style="color: var(--of-blue); font-weight: 600; margin-top: 4px;">$20</div>
+                        </div>
                     </div>
-                    <div class="video-item">
-                        <video controls preload="metadata" style="width: 300px; height: 200px; border-radius: var(--radius-md); object-fit: cover; background: #000;">
-                            <source src="media/videos/video3.mp4" type="video/mp4">
-                        </video>
+                    <div class="video-item" style="text-align: center;">
+                        <img src="media/videos_stats/video3.png" alt="Vidéo 3" style="width: 300px; height: 200px; border-radius: var(--radius-md); object-fit: cover; display: block;">
+                        <div style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                            <div>👁️ 30 vues</div>
+                            <div style="color: var(--of-blue); font-weight: 600; margin-top: 4px;">$30</div>
+                        </div>
                     </div>
-                    <div class="video-item">
-                        <video controls preload="metadata" style="width: 300px; height: 200px; border-radius: var(--radius-md); object-fit: cover; background: #000;">
-                            <source src="media/videos/video4.mp4" type="video/mp4">
-                        </video>
+                    <div class="video-item" style="text-align: center;">
+                        <img src="media/videos_stats/video4.png" alt="Vidéo 4" style="width: 300px; height: 200px; border-radius: var(--radius-md); object-fit: cover; display: block;">
+                        <div style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                            <div>👁️ 40 vues</div>
+                            <div style="color: var(--of-blue); font-weight: 600; margin-top: 4px;">$40</div>
+                        </div>
+                    </div>
+                    <div class="video-item" style="text-align: center;">
+                        <img src="media/videos_stats/video5.png" alt="Vidéo 5" style="width: 300px; height: 200px; border-radius: var(--radius-md); object-fit: cover; display: block;">
+                        <div style="margin-top: 8px; font-size: 14px; color: var(--text-secondary);">
+                            <div>👁️ 50 vues</div>
+                            <div style="color: var(--of-blue); font-weight: 600; margin-top: 4px;">$50</div>
+                        </div>
                     </div>
                 </div>
             </div>

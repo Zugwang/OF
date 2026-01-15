@@ -327,11 +327,11 @@ function drawEarningsChart(earningsHistory) {
 
 // Fonctions utilitaires de formatage
 function formatNumber(num) {
-    return num.toLocaleString('fr-FR');
+    return num.toLocaleString('fr-FR').replace(/\u202F/g, ' ');
 }
 
 function formatCurrency(amount) {
-    return amount.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
+    return amount.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 }).replace(/,/g, ' ');
 }
 
 // Redessiner le graphique lors du redimensionnement

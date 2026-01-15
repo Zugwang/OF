@@ -123,6 +123,166 @@
           "time": "Hier 18:35"
         }
       ]
+    },
+    {
+      "id": 5,
+      "name": "User 5",
+      "avatar": "media/avatars/user5.jpg",
+      "lastMessage": "Template_message_5",
+      "timestamp": "Il y a 2j",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_5",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "User 6",
+      "avatar": "media/avatars/user6.jpg",
+      "lastMessage": "Template_message_6",
+      "timestamp": "Il y a 3j",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_6",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "User 7",
+      "avatar": "media/avatars/user7.jpg",
+      "lastMessage": "Template_message_7",
+      "timestamp": "Il y a 4j",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_7",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "User 8",
+      "avatar": "media/avatars/user8.jpg",
+      "lastMessage": "Template_message_8",
+      "timestamp": "Il y a 5j",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_8",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "User 9",
+      "avatar": "media/avatars/user9.jpg",
+      "lastMessage": "Template_message_9",
+      "timestamp": "Il y a 6j",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_9",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "User 10",
+      "avatar": "media/avatars/user10.jpg",
+      "lastMessage": "Template_message_10",
+      "timestamp": "Il y a 1 sem",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_10",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "User 11",
+      "avatar": "media/avatars/user11.jpg",
+      "lastMessage": "Template_message_11",
+      "timestamp": "Il y a 1 sem",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_11",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "User 12",
+      "avatar": "media/avatars/user12.jpg",
+      "lastMessage": "Template_message_12",
+      "timestamp": "Il y a 2 sem",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_12",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "User 13",
+      "avatar": "media/avatars/user13.jpg",
+      "lastMessage": "Template_message_13",
+      "timestamp": "Il y a 2 sem",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_13",
+          "time": "10:00"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "User 14",
+      "avatar": "media/avatars/user14.jpg",
+      "lastMessage": "Template_message_14",
+      "timestamp": "Il y a 3 sem",
+      "unread": false,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "received",
+          "text": "Template_message_14",
+          "time": "10:00"
+        }
+      ]
     }
   ]
 }
