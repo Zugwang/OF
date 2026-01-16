@@ -285,10 +285,17 @@ body {
 }
 
 .sidebar-item-icon {
-    font-size: 26px;
-    width: 26px;
-    text-align: center;
-    line-height: 1;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-item-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5;
 }
 
 .sidebar-btn {
