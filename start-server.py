@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Serveur HTTP simple pour le projet GFExperience Simulé
+Serveur HTTP simple pour le projet GF experience Simulé
 Ce script lance un serveur web local ou en réseau
 """
 
@@ -54,7 +54,7 @@ def main():
 
     # Gestion des arguments
     parser = argparse.ArgumentParser(
-        description='Serveur HTTP pour GFExperience Simulé',
+        description='Serveur HTTP pour GF experience Simulé',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Exemples d'utilisation:

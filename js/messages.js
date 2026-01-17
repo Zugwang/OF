@@ -67,7 +67,7 @@ function displayConversationsList(conversations) {
             <img src="${conv.avatar}" alt="${conv.name}" class="conversation-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'50\\' height=\\'50\\'%3E%3Crect fill=\\'%2300AFF0\\' width=\\'50\\' height=\\'50\\'/%3E%3Ctext x=\\'50%25\\' y=\\'50%25\\' dominant-baseline=\\'middle\\' text-anchor=\\'middle\\' fill=\\'white\\' font-size=\\'20\\'%3E${conv.name.charAt(0)}%3C/text%3E%3C/svg%3E'">
             <div class="conversation-info">
                 <div class="conversation-name">${conv.name}</div>
-                <div class="conversation-last">${conv.lastMessage}</div>
+                <div class="conversation-last${conv.unread ? ' unread' : ''}">${conv.lastMessage}</div>
             </div>
         `;
 

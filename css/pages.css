@@ -240,6 +240,11 @@
     white-space: nowrap;
 }
 
+.conversation-last.unread {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
 .messages-panel {
     background-color: var(--of-white);
     border-radius: var(--radius-lg);
