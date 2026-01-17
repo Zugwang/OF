@@ -247,13 +247,28 @@ body {
 }
 
 .sidebar-logo {
-    font-size: var(--font-size-xl);
-    font-weight: bold;
     color: var(--of-blue);
     text-decoration: none;
     padding: 0 var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sidebar-logo .logo-main {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    font-family: var(--font-heading);
+}
+
+.sidebar-logo .logo-sub {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 4px;
 }
 
 .sidebar-nav {

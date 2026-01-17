@@ -79,17 +79,23 @@ function displayConversationsList(conversations) {
 function selectConversation(conversationId) {
     currentConversationId = conversationId;
 
-    // Mise à jour de l'UI
+    // Affichage des messages
+    const conversation = currentConversations.find(c => c.id === conversationId);
+    if (conversation) {
+        // Marquer comme lu si non lu
+        if (conversation.unread) {
+            conversation.unread = false;
+            // Rafraîchir la liste pour enlever le style gras
+            displayConversationsList(currentConversations);
+        }
+        displayMessages(conversation);
+    }
+
+    // Mise à jour de l'UI (classe active)
     const items = document.querySelectorAll('.conversation-item');
     items.forEach((item, index) => {
         item.classList.toggle('active', currentConversations[index].id === conversationId);
     });
-
-    // Affichage des messages
-    const conversation = currentConversations.find(c => c.id === conversationId);
-    if (conversation) {
-        displayMessages(conversation);
-    }
 }
 
 // Affichage des messages

@@ -22,7 +22,7 @@
       "avatar": "media/avatars/user2.jpg",
       "lastMessage": "thanx",
       "timestamp": "Il y a 1h",
-      "unread": false,
+      "unread": true,
       "messages": [
         {
           "id": 1,
@@ -182,7 +182,7 @@
       "avatar": "media/avatars/user12.jpg",
       "lastMessage": "How far are you willing to go for me ?",
       "timestamp": "Il y a 2 sem",
-      "unread": false,
+      "unread": true,
       "messages": [
         {
           "id": 1,

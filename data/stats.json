@@ -2,16 +2,16 @@
   "username": "Sarah&Antoine",
   "avatar": "media/avatars/creator.jpg",
   "stats": {
-    "totalViews": 13392092,
-    "monthlyEarnings": 2826.07,
+    "totalViews": 3392092,
+    "monthlyEarnings": 4963.72,
     "subscribers": 694,
     "likes": 19388,
     "posts": 232
   },
   "monthlyStats": {
-    "viewsGrowth": "+12%",
-    "earningsGrowth": "+8%",
-    "subscribersGrowth": "+15%"
+    "viewsGrowth": "",
+    "earningsGrowth": "-64%",
+    "subscribersGrowth": "-56%"
   },
   "earningsHistory": {
     "comment": "Évolution des revenus sur les 6 derniers mois",
