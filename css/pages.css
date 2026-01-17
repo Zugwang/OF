@@ -225,11 +225,16 @@
 
 .conversation-info {
     flex: 1;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .conversation-name {
     font-weight: 600;
     margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .conversation-last {
@@ -238,6 +243,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    max-width: 250px;
 }
 
 .conversation-last.unread {
