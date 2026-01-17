@@ -9,7 +9,10 @@
       "Bash(mkdir:*)",
       "Bash(python start-server.py:*)",
       "Bash(curl:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(tree:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nRename GFExperience to GF experience + messaging improvements\n\n- Rename brand from \"GFExperience\" to \"GF experience\" across all pages\n- Extend conversations from 14 to 40 users with custom usernames\n- Add custom messages for first 12 users\n- Add bold styling for unread messages in conversation list\n- Users 13-20 have creative usernames, 21-40 use generic names\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)"
     ]
   }
 }
